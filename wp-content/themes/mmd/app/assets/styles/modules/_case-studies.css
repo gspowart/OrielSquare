@@ -1,0 +1,64 @@
+.case-studies {
+  @mixin atMedium {
+    display: grid;
+  }
+
+  &__featured-area {
+    @mixin atMedium {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 5.3%;
+      display: grid;
+    }
+    .case-studies__title {
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid $lightBlue;
+    }
+  }
+
+  &__standard-area {
+    @mixin atMedium {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3%;
+    }
+    @mixin atLarge {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 3%;
+    }
+  }
+
+  &__study {
+    background-color: rgba(255, 255, 255, 0.18);
+    padding: 2rem 2rem;
+    @mixin atLarge {
+      padding: 2rem 4rem;
+    }
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 0.6rem;
+    grid-template-columns: auto;
+    grid-template-rows: min-content;
+    margin-bottom: 3rem;
+  }
+  &__image {
+    grid-column: 1;
+    grid-row: 1/1;
+  }
+  &__details {
+    grid-column: 1;
+    grid-row: 2/3;
+  }
+  &__title {
+    color: $white;
+    font-size: 1.75rem;
+  }
+  &__excerpt-editor {
+    padding: 2rem;
+    background-color: #eee;
+  }
+  &__editor-title {
+    grid-column: 1/3;
+  }
+}

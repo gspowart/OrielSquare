@@ -1,0 +1,36 @@
+.content-area {
+  &--centre {
+    text-align: center;
+  }
+
+  &--transparent {
+    padding: 1.6rem 2rem;
+    background-color: rgba(255, 255, 255, 0.18);
+    margin-bottom: 3rem;
+  }
+
+  &--background {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  &__background-image {
+    grid-column: 1;
+    grid-row: 1;
+    img {
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  &__foreground-content {
+    grid-column: 1;
+    grid-row: 1;
+    width: 80%;
+    margin: auto;
+  }
+
+  &__section {
+    padding-bottom: 3rem;
+  }
+}

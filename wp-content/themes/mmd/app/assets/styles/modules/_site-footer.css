@@ -1,0 +1,42 @@
+.site-footer {
+  background-color: $darkGrey;
+  color: $white;
+  font-size: 0.7rem;
+  padding: 3rem 0;
+
+  &__content {
+    border-top: 1px solid #636d6d;
+    margin-top: 15px;
+    padding-top: 15px;
+    @mixin atMedium {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+  &__logo {
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    @mixin atMedium {
+      margin-right: 1.2rem;
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  &__text {
+    margin-bottom: 3rem;
+    @mixin atMedium {
+      margin-bottom: 0;
+    }
+    flex: 1;
+  }
+  &__navigation {
+    p {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.wrapper {
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  /*overflow: hidden; */
+
+  &--modal {
+    width: 95%;
+    max-height: 90%;
+    overflow-y: auto;
+  }
+
+  &--small {
+    max-width: 760px;
+  }
+  &--narrow {
+    max-width: 976px;
+  }
+  &--mid {
+    max-width: 1196px;
+  }
+  &--large {
+    max-width: 1398px;
+  }
+
+  &--no-padding-til-medium {
+    padding-left: 0;
+    padding-right: 0;
+    @mixin atMedium {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
+  &--grid {
+    display: grid;
+    row-gap: 20px;
+    @mixin atMedium {
+      row-gap: 0px;
+    }
+  }
+}

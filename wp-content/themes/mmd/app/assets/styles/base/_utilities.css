@@ -1,0 +1,9 @@
+.t-centre {
+  text-align: center;
+}
+.b-margin {
+  margin-bottom: 3rem;
+}
+.t-white {
+  color: $white;
+}

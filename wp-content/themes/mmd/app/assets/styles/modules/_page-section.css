@@ -1,0 +1,48 @@
+.page-section {
+  padding: 1.2rem 0;
+
+  &--aqua {
+    background: linear-gradient(45deg, #0ed3b1 0%, #0092b6 75%, #0092b6 100%);
+  }
+  &--aqua--large {
+    background: linear-gradient(45deg, #0ed3b1 0%, #0092b6 97%, #0092b6 100%);
+  }
+
+  &--dark-grey {
+    background-color: $darkGrey;
+  }
+  &--mid-grey {
+    background-color: $midGrey;
+  }
+  &--light-grey {
+    background-color: $lightGrey;
+  }
+
+  &--padding-medium {
+    padding: 3rem 0;
+  }
+
+  &--padding-large {
+    padding: 4rem 0;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  @mixin atMedium {
+    padding: 3rem 0;
+
+    &--padding-medium {
+      padding: 5rem 0;
+    }
+
+    &--padding-large {
+      padding: 7rem 0;
+    }
+
+    &--no-padding {
+      padding: 0;
+    }
+  }
+}

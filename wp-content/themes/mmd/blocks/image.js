@@ -1,0 +1,81 @@
+import apiFetch from "@wordpress/api-fetch"
+import { Button, PanelBody } from "@wordpress/components"
+import { InspectorControls, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor"
+import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
+import { registerBlockType } from "@wordpress/blocks"
+import { useEffect } from "@wordpress/element"
+
+registerBlockType("blocktheme/image", {
+  title: "OS -  Image",
+  parent: ["blocktheme/imagerow"],
+  attributes: {
+    imgID: { type: "number" },
+    imgURL: { type: "string", default: image.fallbackImage },
+    imgURLx2: { type: "string", default: image.fallbackImage },
+    imgAlt: { type: "string", default: "Image" },
+    imgSize: { type: "string", default: "logo" },
+    class: { type: "string", default: "image-flexbox__image image-flexbox__image--grey" }
+  },
+  edit: EditComponent,
+  save: SaveComponent,
+  apiVersion: 2
+})
+
+function EditComponent(props) {
+  const blockProps = useBlockProps({})
+  const innerBlocksProps = useInnerBlocksProps(blockProps, {})
+
+  useEffect(
+    function () {
+      if (props.attributes.imgID) {
+        async function go() {
+          const response = await apiFetch({
+            path: `/wp/v2/media/${props.attributes.imgID}`,
+            method: "GET"
+          })
+
+          var imageUrl = response.media_details.sizes.full.source_url
+          var imageUrlx2 = response.media_details.sizes.full.source_url
+          if (response.media_details.sizes.logo_1x) {
+            imageUrl = response.media_details.sizes.logo_1x.source_url
+          }
+          if (response.media_details.sizes.logo_2x) {
+            imageUrlx2 = response.media_details.sizes.logo_2x.source_url
+          }
+          props.setAttributes({ imgURL: imageUrl, imgURLx2: imageUrlx2, imgAlt: response.alt_text })
+        }
+        go()
+      }
+    },
+    [props.attributes.imgID]
+  )
+
+  function onFileSelect(x) {
+    props.setAttributes({ imgID: x.id })
+  }
+
+  return (
+    <>
+      <InspectorControls>
+        <PanelBody title="Image" initialOpen={true}>
+          <MediaUploadCheck>
+            <MediaUpload
+              onSelect={onFileSelect}
+              value={props.attributes.imgID}
+              render={({ open }) => {
+                return <Button onClick={open}>Choose Image</Button>
+              }}
+            />
+          </MediaUploadCheck>
+        </PanelBody>
+      </InspectorControls>
+      <div {...innerBlocksProps}>
+        <img class={`${props.attributes.class}`} srcset={`${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`} alt={`${props.attributes.imgAlt}`} />
+      </div>
+    </>
+  )
+}
+
+function SaveComponent() {
+  return null
+}

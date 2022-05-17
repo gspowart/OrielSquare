@@ -1,0 +1,103 @@
+.glide {
+  padding: 0rem 1rem;
+  position: relative;
+  @mixin atMedium {
+    padding: 0rem 1rem;
+  }
+
+  &__track {
+    transition: height 250ms ease-in-out;
+  }
+
+  &__arrows {
+    display: none;
+    @mixin atMedium {
+      display: block;
+    }
+  }
+
+  &__slides {
+    &--editor {
+      .glide__slide {
+        border-top: 1px solid red;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+    text-indent: -9999px;
+    width: 50px;
+    height: 80px;
+    cursor: pointer;
+    &--left {
+      left: -40px;
+      background-image: url("../../assets/images/icons/arrow-left.svg");
+    }
+    &--right {
+      right: -40px;
+      background-image: url("../../assets/images/icons/arrow-right.svg");
+    }
+  }
+
+  &__modal {
+    .glide__arrows {
+      display: block;
+    }
+    .glide__arrow {
+      position: fixed;
+
+      @mixin atMedium {
+        position: absolute;
+      }
+
+      &--left {
+        left: 0px;
+        background-image: url("../../assets/images/icons/arrow-left.svg");
+      }
+      &--right {
+        right: 0px;
+        background-image: url("../../assets/images/icons/arrow-right.svg");
+      }
+    }
+  }
+  &--border {
+    border: 5px solid rgba(112, 112, 112, 0.4);
+    padding: 1rem 1rem;
+    margin: 3rem 0;
+    position: relative;
+    @mixin atMedium {
+      border: 1.6rem solid rgba(112, 112, 112, 0.4);
+      padding: 2rem 1rem;
+      margin: 15px;
+    }
+
+    .glide__arrow {
+      background-color: rgba(5, 6, 8, 0.3);
+      &--green {
+        background-color: rgba(14, 211, 177, 0.6);
+      }
+      @mixin atMedium {
+        &--left {
+          left: -67px;
+        }
+        &--right {
+          right: -67px;
+        }
+      }
+    }
+  }
+  &--white-bg {
+    background-color: $white;
+  }
+  &--grey-bg {
+    background-color: $lightGrey;
+  }
+}

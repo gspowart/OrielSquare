@@ -1,0 +1,36 @@
+@define-mixin atSmall {
+  @media (min-width: 530px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atMedium {
+  @media (min-width: 800px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atLarge {
+  @media (min-width: 1010px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin button {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 0;
+  padding: 0.6rem 3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  background-color: $orange;
+  color: $white;
+
+  @mixin atMedium {
+    margin-right: 0.6rem;
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,13 @@
+.strapline {
+  font-style: italic;
+  font-weight: 300;
+  color: $lightBlue;
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem 0rem;
+  @mixin atMedium {
+    font-size: 3.125rem;
+    margin: auto;
+    text-align: left;
+  }
+}

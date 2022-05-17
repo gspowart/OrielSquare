@@ -1,0 +1,21 @@
+.image-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  justify-content: center;
+  @mixin atMedium {
+    justify-content: space-between;
+  }
+
+  &__image {
+    margin-bottom: 1rem;
+    &--grey {
+      filter: grayscale(1);
+      transition: filter 0.5s ease;
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

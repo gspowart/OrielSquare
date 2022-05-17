@@ -1,0 +1,59 @@
+.form {
+  display: grid;
+  gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  @mixin atMedium {
+    grid-template-columns: auto auto;
+  }
+
+  &--full-width {
+    grid-template-columns: auto;
+  }
+
+  &--white {
+    .form__text {
+      &::placeholder {
+        color: $white;
+      }
+    }
+  }
+
+  &__text,
+  &__textarea {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $white;
+    padding: 10px 15px;
+    width: 100%;
+
+    &::placeholder {
+      color: $darkGrey;
+    }
+  }
+
+  &__textarea {
+    grid-column: 1 / -1;
+    height: 150px;
+  }
+
+  &__checkbox {
+    grid-column: 1 / -1;
+    input {
+      margin-right: 10px;
+    }
+  }
+
+  &__instructions {
+    grid-column: 1 / -1;
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  &__button-holder {
+    grid-column: 1/2;
+  }
+  &--margin {
+    margin: 0.875rem 0;
+  }
+}

@@ -1,0 +1,63 @@
+.headline {
+  margin: 0;
+  padding: 0;
+
+  &--margin-b {
+    margin-bottom: 3rem;
+  }
+  &--margin-b-mid {
+    margin-bottom: 1rem;
+  }
+  &--margin-b-sm {
+    margin-bottom: 0.4rem;
+  }
+
+  &--underline {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $lightBlue;
+  }
+
+  &--h1 {
+    font-size: 2.125rem;
+    @mixin atMedium {
+      font-size: 3.125rem;
+    }
+    font-weight: 300;
+  }
+  &--h2 {
+    font-size: 2rem;
+    @mixin atMedium {
+      font-size: 2.5rem;
+    }
+    font-weight: 300;
+  }
+  &--h3 {
+    font-size: 1.8rem;
+    @mixin atMedium {
+      font-size: 2rem;
+    }
+    font-weight: 300;
+  }
+  &--h4 {
+    font-size: 1.2rem;
+    @mixin atMedium {
+      font-size: 1.4rem;
+    }
+    font-weight: 200;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--centre {
+    text-align: center;
+  }
+
+  &--white {
+    color: $white;
+  }
+  &--blue {
+    color: $lightBlue;
+  }
+}

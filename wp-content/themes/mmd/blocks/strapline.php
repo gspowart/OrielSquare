@@ -1,0 +1,1 @@
+<span class="strapline"><?php echo $attributes['text']; ?></span>
