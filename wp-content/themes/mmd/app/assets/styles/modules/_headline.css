@@ -1,6 +1,7 @@
 .headline {
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 
   &--margin-b {
     margin-bottom: 3rem;

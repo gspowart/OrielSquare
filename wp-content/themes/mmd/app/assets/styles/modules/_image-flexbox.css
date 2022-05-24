@@ -7,6 +7,12 @@
     justify-content: space-between;
   }
 
+  &--centre {
+    @mixin atMedium {
+      justify-content: space-evenly;
+    }
+  }
+
   &__image {
     margin-bottom: 1rem;
     &--grey {

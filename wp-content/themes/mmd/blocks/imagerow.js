@@ -1,21 +1,48 @@
 import { registerBlockType } from "@wordpress/blocks"
-import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
+import { SelectControl, PanelBody, PanelRow } from "@wordpress/components"
+import { useBlockProps, useInnerBlocksProps, InspectorControls } from "@wordpress/block-editor"
 
 registerBlockType("blocktheme/imagerow", {
   title: "OS -  Image Row",
   supports: {
     align: ["full"]
   },
-  attributes: {},
+  attributes: {
+    layout: { type: "string", default: "" }
+  },
   edit: EditComponent,
   save: SaveComponent,
   apiVersion: 2
 })
 
 function EditComponent(props) {
-  const blockProps = useBlockProps({ className: `image-flexbox` })
+  const blockProps = useBlockProps({ className: `image-flexbox ${props.attributes.layout}` })
   const innerBlocksProps = useInnerBlocksProps(blockProps, { allowedBlocks: ["blocktheme/image"] })
-  return <div {...innerBlocksProps} />
+
+  function handleLayoutChange(x) {
+    props.setAttributes({ layout: x })
+  }
+
+  return (
+    <>
+      <InspectorControls>
+        <PanelBody title="Content Formatting" initialOpen={true}>
+          <PanelRow>
+            <SelectControl
+              label="Layout"
+              value={props.attributes.layout}
+              options={[
+                { value: "", label: "Full Width" },
+                { value: "image-flexbox--centre", label: "Content Centred" }
+              ]}
+              onChange={handleLayoutChange}
+            />
+          </PanelRow>
+        </PanelBody>
+      </InspectorControls>
+      <div {...innerBlocksProps} />
+    </>
+  )
 }
 function SaveComponent(props) {
   const blockProps = useBlockProps.save({})
