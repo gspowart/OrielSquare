@@ -14,8 +14,10 @@ registerBlockType("blocktheme/image", {
     imgURLx2: { type: "string", default: image.fallbackImage },
     imgAlt: { type: "string", default: "Image" },
     imgSize: { type: "string", default: "logo" },
-    class: { type: "string", default: "image-flexbox__image image-flexbox__image--grey" }
+    class: { type: "string", default: "image-flexbox__image image-flexbox__image--grey" },
+    layout: { type: "string", default: "" }
   },
+  usesContext: ["blocktheme/layout"],
   edit: EditComponent,
   save: SaveComponent,
   apiVersion: 2
@@ -24,6 +26,7 @@ registerBlockType("blocktheme/image", {
 function EditComponent(props) {
   const blockProps = useBlockProps({})
   const innerBlocksProps = useInnerBlocksProps(blockProps, {})
+  props.setAttributes({ layout: props.context["blocktheme/layout"] })
 
   useEffect(
     function () {

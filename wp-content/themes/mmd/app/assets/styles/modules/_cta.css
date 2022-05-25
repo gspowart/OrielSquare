@@ -3,7 +3,8 @@
   @mixin atMedium {
     display: grid;
     column-gap: 5rem;
-    grid-template-columns: fit-content(50%) fit-content(50%);
+    grid-template-columns: auto;
+    /*grid-template-columns: fit-content(50%) fit-content(50%);*/
   }
 
   &--transparent {

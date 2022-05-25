@@ -10,6 +10,8 @@ registerBlockType("blocktheme/imagerow", {
   attributes: {
     layout: { type: "string", default: "" }
   },
+  providesContext: { "blocktheme/layout": "layout" },
+
   edit: EditComponent,
   save: SaveComponent,
   apiVersion: 2
@@ -33,7 +35,8 @@ function EditComponent(props) {
               value={props.attributes.layout}
               options={[
                 { value: "", label: "Full Width" },
-                { value: "image-flexbox--centre", label: "Content Centred" }
+                { value: "image-flexbox--centre", label: "Content Centred" },
+                { value: "carousel", label: "Carousel" }
               ]}
               onChange={handleLayoutChange}
             />

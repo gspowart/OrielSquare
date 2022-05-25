@@ -11,7 +11,7 @@
     @mixin atMedium {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 50px;
     }
   }
   &__logo {
@@ -21,7 +21,7 @@
     @mixin atMedium {
       margin-right: 1.2rem;
       text-align: left;
-      margin-top: 0;
+      margin-top: 1rem;
       margin-bottom: 0;
     }
   }

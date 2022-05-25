@@ -86,6 +86,14 @@ document.querySelectorAll(".showCaseStudy").forEach(el => {
   })
 })
 
+var glideLogos = new Glide(".glide-logos", {
+  type: "carousel",
+  perView: 5,
+  autoplay: 2000,
+  animationDuration: 900
+})
+glideLogos.mount()
+
 var carouselText = makeCarousel(".glide-testimonial")
 
 function setModalItem(carousel, id) {

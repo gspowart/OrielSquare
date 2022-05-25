@@ -140,6 +140,9 @@ __webpack_require__.r(__webpack_exports__);
       default: ""
     }
   },
+  providesContext: {
+    "blocktheme/layout": "layout"
+  },
   edit: EditComponent,
   save: SaveComponent,
   apiVersion: 2
@@ -171,6 +174,9 @@ function EditComponent(props) {
     }, {
       value: "image-flexbox--centre",
       label: "Content Centred"
+    }, {
+      value: "carousel",
+      label: "Carousel"
     }],
     onChange: handleLayoutChange
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps));

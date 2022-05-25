@@ -19,7 +19,6 @@ registerBlockType("blocktheme/teamdirector", {
     name: { type: "string", default: "Name" },
     position: { type: "string", default: "Position" },
     bio: { type: "string", default: "Biography" },
-    email: { type: "string", default: "Email: <a>email@email.com</a>" },
     linkedin: { type: "string", default: "<a>#linkedin</a>" }
   },
   edit: EditComponent,
@@ -81,8 +80,6 @@ function EditComponent(props) {
           <RichText allowedFormats={[]} tagName="div" className="team__name" value={props.attributes.name} onChange={value => props.setAttributes({ name: value })} />
           <RichText allowedFormats={[]} tagName="div" className="team__position" value={props.attributes.position} onChange={value => props.setAttributes({ position: value })} />
           <div class="team__contact">
-            <RichText allowedFormats={["core/bold", "core/italic", "core/link"]} tagName="span" className="email" value={props.attributes.email} onChange={value => props.setAttributes({ email: value })} />
-            <br />
             <span class="linkedin">
               <RichText allowedFormats={["core/bold", "core/italic", "core/link"]} tagName="span" className="linkedin-url" value={props.attributes.linkedin} onChange={value => props.setAttributes({ linkedin: value })} />
             </span>

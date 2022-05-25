@@ -19,10 +19,6 @@ $bio = 'Biography';
 if (isset($attributes['bio'])) {
   $bio = $attributes['bio'];
 }
-$email = '<a href="mailto:info@orielsquare.co.uk">info@orielsquare.co.uk</a>';
-if (isset($attributes['email'])) {
-  $email = $attributes['email'];
-}
 $linkedin = '<a href="https://www.linkedin.com">#LinkedIn</a>';
 if (isset($attributes['linkedin'])) {
   $linkedin = $attributes['linkedin'];
@@ -36,7 +32,6 @@ if (isset($attributes['linkedin'])) {
     <div class="team__name"><?php echo $name; ?></div>
     <div class="team__position"><?php echo $position; ?></div>
     <div class="team__contact">
-      <?php echo $email; ?><br />
       <span class="linkedin"><?php echo $linkedin; ?></span>
     </div>
   </div>

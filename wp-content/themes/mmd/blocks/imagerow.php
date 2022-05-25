@@ -3,7 +3,19 @@ $layout = '';
 if (isset($attributes['layout'])) {
   $layout = $attributes['layout'];
 }
-?>
-<div class="image-flexbox <?php echo $layout; ?>">
-  <?php echo $content; ?>
-</div>
+
+if ($layout == "carousel") { ?>
+
+  <div class="glide-logos" data-transition-speed="7000">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+        <?php echo $content; ?>
+      </div>
+    </div>
+
+  </div>
+<?php } else { ?>
+  <div class="image-flexbox <?php echo $layout; ?>">
+    <?php echo $content; ?>
+  </div>
+<?php } ?>

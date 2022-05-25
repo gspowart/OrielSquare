@@ -25,7 +25,10 @@ if (isset($attributes['wrapperTag'])) {
 }
 
 echo '<' . $wrapperTag . ' class="' . $wrapperClassName . '">';
-?>
-<img class="<?php echo $class; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+if (str_ends_with($imgURL, '.svg')) { ?>
+  <img class="<?php echo $class; ?>" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
+<?php } else { ?>
+  <img class="<?php echo $class; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
 <?php
+}
 echo '</' . $wrapperTag . '>';

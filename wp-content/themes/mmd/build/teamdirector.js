@@ -175,10 +175,6 @@ __webpack_require__.r(__webpack_exports__);
       type: "string",
       default: "Biography"
     },
-    email: {
-      type: "string",
-      default: "Email: <a>email@email.com</a>"
-    },
     linkedin: {
       type: "string",
       default: "<a>#linkedin</a>"
@@ -267,15 +263,7 @@ function EditComponent(props) {
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "team__contact"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    allowedFormats: ["core/bold", "core/italic", "core/link"],
-    tagName: "span",
-    className: "email",
-    value: props.attributes.email,
-    onChange: value => props.setAttributes({
-      email: value
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     class: "linkedin"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
     allowedFormats: ["core/bold", "core/italic", "core/link"],

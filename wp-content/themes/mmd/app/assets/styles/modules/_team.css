@@ -13,9 +13,6 @@
 
     .team__profile {
       margin-bottom: 25px;
-      @mixin atLarge {
-        margin-bottom: 0;
-      }
       .team__photo {
         margin-bottom: 25px;
         @mixin atLarge {
@@ -33,6 +30,7 @@
     @mixin atLarge {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      column-gap: 5.3%;
     }
     margin-bottom: 5rem;
   }

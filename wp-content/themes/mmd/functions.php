@@ -96,6 +96,7 @@ new JSXBlock('columns', true, null, "columns/");
 new JSXBlock('columns6040', true, null, "columns/");
 new JSXBlock('columns5050', true, null, "columns/");
 new JSXBlock('columns4060', true, null, "columns/");
+new JSXBlock('columns3', true, null, "columns/");
 new JSXBlock('columnsfull', true, null, "columns/");
 new JSXBlock('columncontent', true, ['fallbackImage' => get_theme_file_uri('/dist/assets/images/oxford-bg-image@2x.jpg')], "columns/");
 new JSXBlock('heading', true);

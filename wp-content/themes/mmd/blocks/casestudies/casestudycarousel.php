@@ -18,6 +18,6 @@ if (isset($attributes['blockTitle'])) {
         </div>
       </div>
     </div>
-    <p class="t-centre"><a class="btn btn--default" href="<?php the_permalink(697); ?>">View all case studies</a></p>
+    <p class="t-centre"><a class="btn btn--default btn--large" href="<?php the_permalink(697); ?>">View all case studies</a></p>
   </div>
 </div>
