@@ -32,7 +32,7 @@ if ($layoutType == "carousel") {
 ?>
   <div class="glide__slide">
     <div class="row row--gutters">
-      <div class="row__large-6 row--center-content content-area">
+      <div class="row__large-6 row--center-content-vertically content-area">
         <h3 class="headline headline--h3 headline--white"><?php echo $title; ?></h3>
         <p><?php echo $extract; ?></p>
       </div>
@@ -50,7 +50,7 @@ if ($layoutType == "carousel") {
         <a class="btn btn--default open-modal showCaseStudy" data-case-study-id="1" href="#">Read more</a>
         <div class="case-studies__details--popup-content glide__slide">
           <div class="row row--gutters">
-            <div class="row__large-6 row--center-content content-area">
+            <div class="row__large-6 row--center-content-vertically content-area">
               <p class="headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid"><?php echo $type; ?></p>
               <h3 class="headline headline--h3 headline--underline"><?php echo $title; ?></h3>
               <?php echo $content; ?>

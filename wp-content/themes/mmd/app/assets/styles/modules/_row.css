@@ -88,6 +88,9 @@
 
   &--center-content {
     margin: auto;
+    &-vertically {
+      margin: auto 0;
+    }
   }
 
   &--b-margin {

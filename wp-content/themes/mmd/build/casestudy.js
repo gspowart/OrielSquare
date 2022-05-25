@@ -285,7 +285,7 @@ function EditComponent(props) {
     }],
     onChange: handleTypeChange
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "row__large-6 row--center-content content-area"
+    class: "row__large-6 row--center-content-vertically content-area"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
     tagName: "p",
     className: "headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid",

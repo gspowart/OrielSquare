@@ -105,7 +105,7 @@ function EditComponent(props) {
         </PanelBody>
       </InspectorControls>
       <div {...blockProps}>
-        <div class="row__large-6 row--center-content content-area">
+        <div class="row__large-6 row--center-content-vertically content-area">
           <RichText tagName="p" className="headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid" allowedFormats={["core/bold", "core/italic"]} value={props.attributes.type} />
           <RichText tagName="h3" className="headline headline--h3 headline--underline" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Title" value={props.attributes.title} onChange={value => props.setAttributes({ title: value })} />
           {innerBlocksProps.children}
