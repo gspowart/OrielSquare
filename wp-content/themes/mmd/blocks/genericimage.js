@@ -85,7 +85,7 @@ function EditComponent(props) {
         </PanelBody>
       </InspectorControls>
       <TagWrapper {...blockProps}>
-        <img class={`${props.attributes.class}`} srcset={`${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`} alt={`${props.attributes.imgAlt}`} />
+        <img width="140" class={`${props.attributes.class}`} srcset={`${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`} alt={`${props.attributes.imgAlt}`} />
       </TagWrapper>
     </>
   )

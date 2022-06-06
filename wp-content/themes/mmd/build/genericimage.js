@@ -256,6 +256,7 @@ function EditComponent(props) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: removeImage
   }, "Remove Image")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TagWrapper, blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    width: "140",
     class: `${props.attributes.class}`,
     srcset: `${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`,
     alt: `${props.attributes.imgAlt}`
