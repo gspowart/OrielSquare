@@ -275,7 +275,7 @@ function EditComponent(props) {
           backgroundImage: "content-area--background"
         });
         props.setAttributes({
-          foregroundContent: "content-area__foreground-content"
+          foregroundContent: "content-area__foreground-content content-area__logo-content"
         });
       }
 

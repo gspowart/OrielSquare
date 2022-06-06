@@ -70,7 +70,7 @@ function EditComponent(props) {
           }
           props.setAttributes({ imgURL: imageUrl, imgURLx2: imageUrlx2, imgAlt: response.alt_text })
           props.setAttributes({ backgroundImage: "content-area--background" })
-          props.setAttributes({ foregroundContent: "content-area__foreground-content" })
+          props.setAttributes({ foregroundContent: "content-area__foreground-content content-area__logo-content" })
         }
         go()
       }

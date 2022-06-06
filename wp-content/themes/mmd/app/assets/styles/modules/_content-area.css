@@ -39,9 +39,7 @@
   }
 
   &__logo-content {
-    display: grid;
     margin: 20px auto;
-    grid-template-columns: 1fr 1fr;
   }
 
   &__logo {
