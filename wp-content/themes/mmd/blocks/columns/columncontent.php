@@ -19,6 +19,10 @@ $backgroundColor = '';
 if (isset($attributes['backgroundColor'])) {
   $backgroundColor = $attributes['backgroundColor'];
 }
+$contentColour = '';
+if (isset($attributes['contentColour'])) {
+  $contentColour = $attributes['contentColour'];
+}
 $foregroundContent = '';
 if (isset($attributes['foregroundContent'])) {
   $foregroundContent = $attributes['foregroundContent'];
@@ -41,7 +45,7 @@ if (isset($attributes['imgAlt'])) {
 }
 
 ?>
-<div class="<?php echo $className; ?> content-area <?php echo $backgroundColor; ?><?php echo $backgroundImage; ?> <?php echo $alignment; ?> <?php echo $margin; ?>">
+<div class="<?php echo $className; ?> content-area <?php echo $backgroundColor; ?> <?php echo $contentColour; ?> <?php echo $backgroundImage; ?> <?php echo $alignment; ?> <?php echo $margin; ?>">
 
   <?php if (!is_null($imgID)) { ?>
     <picture class="content-area__background-image">

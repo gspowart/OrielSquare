@@ -134,6 +134,10 @@ __webpack_require__.r(__webpack_exports__);
     pictureSize2x: {
       type: "string",
       default: "homepage_banner_2x"
+    },
+    strapline: {
+      type: "string",
+      default: "Strapline here"
     }
   },
   providesContext: {
@@ -158,6 +162,13 @@ function EditComponent(props) {
       class: props.attributes.pictureClass
     }]]
   });
+
+  function handleTextChange(x) {
+    props.setAttributes({
+      strapline: x
+    });
+  }
+
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "page-header__image page-header__image--editor"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
@@ -171,6 +182,11 @@ function EditComponent(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: props.attributes.logoURL,
     alt: "Oriel Square Logo"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "page-header__strapline"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    onChange: handleTextChange,
+    value: props.attributes.strapline
   }))))));
 }
 

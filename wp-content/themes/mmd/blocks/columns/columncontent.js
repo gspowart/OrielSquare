@@ -18,6 +18,7 @@ registerBlockType("blocktheme/columncontent", {
     backgroundImage: { type: "string", default: "" },
     foregroundContent: { type: "string", default: "" },
     backgroundColor: { type: "string", default: "none" },
+    contentColour: { type: "string", default: "" },
     imgID: { type: "number" },
     imgURL: { type: "string", default: columncontent.fallbackImage },
     imgURLx2: { type: "string", default: columncontent.fallbackImage },
@@ -30,7 +31,7 @@ registerBlockType("blocktheme/columncontent", {
 
 function EditComponent(props) {
   const DEFAULT_TEMPLATE = [["core/paragraph"]]
-  const blockProps = useBlockProps({ className: `${props.attributes.className} content-area ${props.attributes.backgroundColor} ${props.attributes.backgroundImage} ${props.attributes.alignment} ${props.attributes.margin}` })
+  const blockProps = useBlockProps({ className: `${props.attributes.className} content-area ${props.attributes.contentColour} ${props.attributes.backgroundColor} ${props.attributes.backgroundImage} ${props.attributes.alignment} ${props.attributes.margin}` })
   const innerBlocksProps = useInnerBlocksProps(blockProps, { template: DEFAULT_TEMPLATE })
 
   const backgroundColors = [
@@ -121,6 +122,19 @@ function EditComponent(props) {
         <PanelBody title="Background Colour" initialOpen={true}>
           <PanelRow>
             <ColorPalette disableCustomColors={true} clearable={false} colors={backgroundColors} value={currentColorValue} onChange={handleColorChange} />
+          </PanelRow>
+        </PanelBody>
+        <PanelBody title="Foreground Colour" initialOpen={true}>
+          <PanelRow>
+            <SelectControl
+              label="Content Colour"
+              value={props.attributes.contentColour}
+              options={[
+                { value: "", label: "Default" },
+                { value: "content-area--white", label: "White" }
+              ]}
+              onChange={value => props.setAttributes({ contentColour: value })}
+            />
           </PanelRow>
         </PanelBody>
         <PanelBody title="Content Formatting" initialOpen={true}>

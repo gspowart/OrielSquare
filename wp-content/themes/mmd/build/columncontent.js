@@ -186,6 +186,10 @@ __webpack_require__.r(__webpack_exports__);
       type: "string",
       default: "none"
     },
+    contentColour: {
+      type: "string",
+      default: ""
+    },
     imgID: {
       type: "number"
     },
@@ -210,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 function EditComponent(props) {
   const DEFAULT_TEMPLATE = [["core/paragraph"]];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)({
-    className: `${props.attributes.className} content-area ${props.attributes.backgroundColor} ${props.attributes.backgroundImage} ${props.attributes.alignment} ${props.attributes.margin}`
+    className: `${props.attributes.className} content-area ${props.attributes.contentColour} ${props.attributes.backgroundColor} ${props.attributes.backgroundImage} ${props.attributes.alignment} ${props.attributes.margin}`
   });
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useInnerBlocksProps)(blockProps, {
     template: DEFAULT_TEMPLATE
@@ -348,6 +352,22 @@ function EditComponent(props) {
     colors: backgroundColors,
     value: currentColorValue,
     onChange: handleColorChange
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: "Foreground Colour",
+    initialOpen: true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+    label: "Content Colour",
+    value: props.attributes.contentColour,
+    options: [{
+      value: "",
+      label: "Default"
+    }, {
+      value: "content-area--white",
+      label: "White"
+    }],
+    onChange: value => props.setAttributes({
+      contentColour: value
+    })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     title: "Content Formatting",
     initialOpen: true

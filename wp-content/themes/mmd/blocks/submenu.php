@@ -11,7 +11,8 @@ if (isset($attributes['menuTitle'])) {
   $pages = wp_list_pages(array(
     'child_of' => wp_get_post_parent_id(),
     'sort_column' => 'menu_order',
-    'title_li' => ''
+    'title_li' => '',
+    'exclude' => get_the_ID()
   ));
   ?>
 </ul>

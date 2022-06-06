@@ -1,6 +1,12 @@
 <?php
 $logoURL = get_theme_file_uri('/dist/assets/images/logos/oriel-square-logo.svg');
 $content = str_replace('srcset', 'data-srcset', $content);
+$strapline = '';
+if (isset($attributes['strapline'])) {
+  $strapline = $attributes['strapline'];
+}
+
+
 
 /*
 $dom = new DOMDocument;
@@ -17,6 +23,7 @@ echo $dom->saveHtml($pictures[$id]);
   <div class="page-header__content page-header__content--home">
     <div class="wrapper">
       <div class="page-header__logo page-header__logo--home"><img src="<?php echo $logoURL ?>" alt="Oriel Square Logo"></div>
+      <div class="page-header__strapline"><?php echo $strapline; ?></div>
     </div>
   </div>
 </div>

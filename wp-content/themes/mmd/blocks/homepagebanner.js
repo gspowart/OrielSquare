@@ -1,5 +1,5 @@
 import { registerBlockType } from "@wordpress/blocks"
-import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
+import { RichText, useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
 
 registerBlockType("blocktheme/homepagebanner", {
   title: "OS -  Homepage Banners",
@@ -7,7 +7,8 @@ registerBlockType("blocktheme/homepagebanner", {
     logoURL: { type: "string", default: homepagebanner.logoURL },
     pictureClass: { type: "string", default: "page-header__image" },
     pictureSize: { type: "string", default: "homepage_banner_1x" },
-    pictureSize2x: { type: "string", default: "homepage_banner_2x" }
+    pictureSize2x: { type: "string", default: "homepage_banner_2x" },
+    strapline: { type: "string", default: "Strapline here" }
   },
   providesContext: { "blocktheme/pictureClass": "pictureClass", "blocktheme/pictureSize": "pictureSize", "blocktheme/pictureSize2x": "pictureSize2x" },
 
@@ -19,6 +20,9 @@ registerBlockType("blocktheme/homepagebanner", {
 function EditComponent(props) {
   const blockProps = useBlockProps({ className: `page-header page-header--homepage page-header--no-padding page-header--white` })
   const innerBlocksProps = useInnerBlocksProps({ className: `page-header__image--editor-images` }, { allowedBlocks: ["blocktheme/genericpicture"], template: [["blocktheme/genericpicture", { class: props.attributes.pictureClass }]] })
+  function handleTextChange(x) {
+    props.setAttributes({ strapline: x })
+  }
 
   return (
     <>
@@ -31,6 +35,9 @@ function EditComponent(props) {
           <div class="wrapper">
             <div class="page-header__logo page-header__logo--home">
               <img src={props.attributes.logoURL} alt="Oriel Square Logo" />
+            </div>
+            <div class="page-header__strapline">
+              <RichText onChange={handleTextChange} value={props.attributes.strapline} />
             </div>
           </div>
         </div>
