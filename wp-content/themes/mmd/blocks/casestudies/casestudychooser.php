@@ -18,8 +18,16 @@ if ($postID > 0) {
 
   setup_postdata($post);
   $blocks = parse_blocks($post->post_content);
+  $categories = wp_get_post_terms($postID, 'case_study_category');
+  $output = array_map(function ($object) {
+    return $object->slug;
+  }, $categories);
+  $caseStudyCategories = implode('|', $output);
+
   foreach ($blocks as $block) {
     $block['attrs']['layoutType'] = $csLayoutType;
+    $block['attrs']['categories'] = $caseStudyCategories;
+
     //echo '## block ##' . $csLayoutType;
     //print_r($block);
 

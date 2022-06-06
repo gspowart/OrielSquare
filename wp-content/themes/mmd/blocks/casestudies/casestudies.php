@@ -1,7 +1,20 @@
 <div class="page-section page-section--aqua--large page-section--padding-medium">
   <div class="wrapper">
     <div class="case-studies">
+      <div class="blog__filter">
+        Filter by Category
+        <select id="caseStudyFilter">
+          <option value="-1">-- Show all --</option>
+          <?php
+          $taxonomies = get_terms('case_study_category');
+          foreach ($taxonomies as $category) {
+            echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
+          }
+          ?>
+        </select>
+      </div>
       <?php echo $content; ?>
+
     </div>
   </div>
 </div>

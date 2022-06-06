@@ -27,7 +27,10 @@ $layoutType = 'list';
 if (isset($attributes['layoutType'])) {
   $layoutType = $attributes['layoutType'];
 }
-
+$categories = '';
+if (isset($attributes['categories'])) {
+  $categories = $attributes['categories'];
+}
 if ($layoutType == "carousel") {
 ?>
   <div class="glide__slide">
@@ -35,6 +38,7 @@ if ($layoutType == "carousel") {
       <div class="row__large-6 row--center-content-vertically content-area">
         <h3 class="headline headline--h3 headline--white"><?php echo $title; ?></h3>
         <p><?php echo $extract; ?></p>
+        <p><a href="<?php the_permalink(697); ?>?cs_cat=<?php echo explode('|', $categories)[0]; ?>" class="btn btn--default">See more</a></p>
       </div>
       <div class="row__large-6 row--center-content"><img srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></div>
     </div>
@@ -42,7 +46,7 @@ if ($layoutType == "carousel") {
 <?php
 } else {
 ?>
-  <div class="case-studies__study content-area">
+  <div class="case-studies__study content-area" data-case-study-categories="<?php echo $categories; ?>">
     <div class="case-studies__image"><img srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
       <div class="case-studies__details">
         <h3 class="case-studies__title"><?php echo $title; ?></h3>

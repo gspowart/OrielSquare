@@ -26,7 +26,7 @@ document.querySelectorAll(".open-modal").forEach(el => {
 function makeCarousel(selector) {
   var carouselItems = document.querySelector(selector)
   var carousel
-  if (carouselItems) {
+  if (carouselItems != null) {
     var transitionSpeed = carouselItems.dataset.transitionSpeed
     if (transitionSpeed < 0) transitionSpeed = false
     carousel = new Glide(selector, {
@@ -75,10 +75,13 @@ var caseStudiesPopupCount = 0
 document.querySelectorAll(".showCaseStudy").forEach(el => {
   el.dataset.caseStudyId = caseStudiesPopupCount
   caseStudiesPopupCount++
-  popupContentCS.append(el.parentElement.querySelector(".case-studies__details--popup-content"))
+  var popupContent = el.parentElement.querySelector(".case-studies__details--popup-content")
+  if (popupContent) {
+    popupContentCS.append(popupContent)
+  }
 })
-var carouselCS = makeCarousel(".glide-case-studies")
 
+var carouselCS = makeCarousel(".glide-case-studies")
 document.querySelectorAll(".showCaseStudy").forEach(el => {
   el.addEventListener("click", e => {
     e.preventDefault()
@@ -86,13 +89,15 @@ document.querySelectorAll(".showCaseStudy").forEach(el => {
   })
 })
 
-var glideLogos = new Glide(".glide-logos", {
-  type: "carousel",
-  perView: 5,
-  autoplay: 2000,
-  animationDuration: 900
-})
-glideLogos.mount()
+if (document.querySelector(".glide-logos")) {
+  var glideLogos = new Glide(".glide-logos", {
+    type: "carousel",
+    perView: 5,
+    autoplay: 2000,
+    animationDuration: 900
+  })
+  glideLogos.mount()
+}
 
 var carouselText = makeCarousel(".glide-testimonial")
 
@@ -100,14 +105,15 @@ function setModalItem(carousel, id) {
   carousel.update({ startAt: id })
 }
 
-var index = Math.floor(Math.random() * document.querySelectorAll(".page-header__image").length)
-document
-  .querySelectorAll(".page-header__image")
-  [index].querySelectorAll("source, img")
-  .forEach(el => {
-    el.setAttribute("srcset", el.getAttribute("data-srcset"))
-  })
-
+if (document.querySelector(".page-header__image")) {
+  var index = Math.floor(Math.random() * document.querySelectorAll(".page-header__image").length)
+  document
+    .querySelectorAll(".page-header__image")
+    [index].querySelectorAll("source, img")
+    .forEach(el => {
+      el.setAttribute("srcset", el.getAttribute("data-srcset"))
+    })
+}
 // Resize height
 function glideHandleHeight(selector) {
   const activeSlide = document.querySelector(selector + " .glide__slide--active")
@@ -119,4 +125,40 @@ function glideHandleHeight(selector) {
   if (activeSlideHeight !== glideTrackHeight) {
     glideTrack.style.height = `${activeSlideHeight}px`
   }
+}
+
+// Filter case studies
+document.querySelector("#caseStudyFilter").addEventListener("change", e => {
+  filterCaseStudy(e.target.value)
+})
+
+// Check for querystring filter of case studies
+const params = new URLSearchParams(window.location.search)
+if (params.has("cs_cat")) {
+  var selectedCategory = params.get("cs_cat")
+  filterCaseStudy(selectedCategory)
+  const csFilter = document.querySelector("#caseStudyFilter")
+  if (csFilter) {
+    csFilter.value = selectedCategory
+  }
+}
+
+function filterCaseStudy(selectedCategory) {
+  var display = "none"
+  document.querySelectorAll(".case-studies__study").forEach(el => {
+    if (selectedCategory == "-1") {
+      display = "grid"
+    } else {
+      display = "none"
+      var csCategories = el.dataset.caseStudyCategories
+      if (csCategories) {
+        csCategories.split("|").forEach(category => {
+          if (category === selectedCategory) {
+            display = ""
+          }
+        })
+      }
+    }
+    el.style.display = display
+  })
 }
