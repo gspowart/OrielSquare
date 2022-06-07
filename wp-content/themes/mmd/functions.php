@@ -47,6 +47,15 @@ function slug_post_type_template()
 add_action('init', 'slug_post_type_template');
 
 
+add_filter('gform_pre_render', 'add_input_type_gravity_forms');
+
+function add_input_type_gravity_forms($form)
+{
+  foreach ($form['fields'] as $f => $field)
+    $form['fields'][$f]['cssClass'] .= 'input-type-' . $field['type'];
+
+  return $form;
+}
 
 /* ******************************************************************************************** 
 Block Theme Functions

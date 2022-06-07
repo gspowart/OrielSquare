@@ -1,3 +1,83 @@
+.gform_wrapper .gform_fields {
+  display: grid;
+  gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  @mixin atMedium {
+    grid-template-columns: auto auto;
+  }
+
+  .ginput_container_email,
+  .ginput_container_text {
+    input {
+      margin: 10px 0 0 0;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: $white;
+      padding: 10px 15px;
+      width: 100%;
+    }
+  }
+  .input-type-textarea {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+
+    textarea {
+      margin: 10px 0 0 0;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: $white;
+      padding: 10px 15px;
+      width: 100%;
+      border: 0;
+    }
+  }
+
+  fieldset {
+    grid-column: 1 / -1;
+    border: 0;
+    padding: 0;
+    margin: 10px 0 0 0;
+    padding: 10px 0px;
+    legend {
+      display: none;
+    }
+  }
+
+  .gfield_checkbox {
+    display: grid;
+
+    .gchoice {
+      grid-column: 1 / -1;
+      margin-bottom: 20px;
+      input {
+        margin-right: 10px;
+      }
+    }
+  }
+  .gfield_description {
+    grid-column: 1 / -1;
+    font-size: 0.875rem;
+    margin: 0 0 10px;
+  }
+}
+.gform_button {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border: 0;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1.9rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #0ed3b1 0%, #0092b6 93.58%, #0092b6 100%);
+  color: $white;
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+}
+
 .form {
   display: grid;
   gap: 20px;

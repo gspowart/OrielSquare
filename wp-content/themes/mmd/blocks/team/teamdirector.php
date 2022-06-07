@@ -31,9 +31,11 @@ if (isset($attributes['linkedin'])) {
   <div class="team__details content-area">
     <div class="team__name"><?php echo $name; ?></div>
     <div class="team__position"><?php echo $position; ?></div>
-    <div class="team__contact">
-      <span class="linkedin"><?php echo $linkedin; ?></span>
-    </div>
+    <?php if ($linkedin) { ?>
+      <div class="team__contact">
+        <span class="linkedin"><?php echo $linkedin; ?></span>
+      </div>
+    <?php } ?>
   </div>
   <div class="team__bio">
     <p><?php echo $bio; ?></p>

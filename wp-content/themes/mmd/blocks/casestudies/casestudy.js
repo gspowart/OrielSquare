@@ -11,7 +11,7 @@ registerBlockType("blocktheme/casestudy", {
   },
   attributes: {
     title: { type: "string" },
-    type: { type: "string", default: "Project Insights" },
+    type: { type: "string" },
     imgID: { type: "number" },
     imgURL: { type: "string", default: casestudy.defaultImage },
     imgURLx2: { type: "string", default: casestudy.defaultImage },
@@ -62,9 +62,6 @@ function EditComponent(props) {
   function removeImage() {
     props.setAttributes({ imgID: "", backgroundImage: "", imgURL: "", imgURLx2: "", imgAlt: "" })
   }
-  function handleTypeChange(x) {
-    props.setAttributes({ type: x })
-  }
   return (
     <>
       <InspectorControls>
@@ -88,25 +85,10 @@ function EditComponent(props) {
             <Button onClick={removeImage}>Remove Image</Button>
           </MediaUploadCheck>
         </PanelBody>
-        <PanelBody title="Case Study Info" initialOpen={true}>
-          <PanelRow>
-            <SelectControl
-              label="Category"
-              value={props.attributes.type}
-              options={[
-                { value: "", label: "None" },
-                { value: "headline--margin-b-sm", label: "Small" },
-                { value: "headline--margin-b-mid", label: "Mid" },
-                { value: "headline--margin-b", label: "Standard" }
-              ]}
-              onChange={handleTypeChange}
-            />
-          </PanelRow>
-        </PanelBody>
       </InspectorControls>
       <div {...blockProps}>
         <div class="row__large-6 row--center-content-vertically content-area">
-          <RichText tagName="p" className="headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid" allowedFormats={["core/bold", "core/italic"]} value={props.attributes.type} />
+          <RichText tagName="p" className="headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Category" value={props.attributes.type} onChange={value => props.setAttributes({ type: value })} />
           <RichText tagName="h3" className="headline headline--h3 headline--underline" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Title" value={props.attributes.title} onChange={value => props.setAttributes({ title: value })} />
           {innerBlocksProps.children}
         </div>

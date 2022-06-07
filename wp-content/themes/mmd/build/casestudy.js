@@ -153,8 +153,7 @@ __webpack_require__.r(__webpack_exports__);
       type: "string"
     },
     type: {
-      type: "string",
-      default: "Project Insights"
+      type: "string"
     },
     imgID: {
       type: "number"
@@ -240,12 +239,6 @@ function EditComponent(props) {
     });
   }
 
-  function handleTypeChange(x) {
-    props.setAttributes({
-      type: x
-    });
-  }
-
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Image",
     initialOpen: true
@@ -264,33 +257,17 @@ function EditComponent(props) {
     }
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: removeImage
-  }, "Remove Image"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Case Study Info",
-    initialOpen: true
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: "Category",
-    value: props.attributes.type,
-    options: [{
-      value: "",
-      label: "None"
-    }, {
-      value: "headline--margin-b-sm",
-      label: "Small"
-    }, {
-      value: "headline--margin-b-mid",
-      label: "Mid"
-    }, {
-      value: "headline--margin-b",
-      label: "Standard"
-    }],
-    onChange: handleTypeChange
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Remove Image")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "row__large-6 row--center-content-vertically content-area"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
     tagName: "p",
     className: "headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid",
     allowedFormats: ["core/bold", "core/italic"],
-    value: props.attributes.type
+    placeholder: "Case Study Category",
+    value: props.attributes.type,
+    onChange: value => props.setAttributes({
+      type: value
+    })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
     tagName: "h3",
     className: "headline headline--h3 headline--underline",
