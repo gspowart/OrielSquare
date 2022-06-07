@@ -60,6 +60,10 @@
     font-size: 0.875rem;
     margin: 0 0 10px;
   }
+  .gform_submission_error,
+  .gfield_validation_message {
+    color: $error;
+  }
 }
 .gform_button {
   text-decoration: none;

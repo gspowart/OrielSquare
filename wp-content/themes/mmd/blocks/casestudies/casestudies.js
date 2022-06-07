@@ -1,16 +1,15 @@
 import { registerBlockType } from "@wordpress/blocks"
-import { CheckboxControl } from "@wordpress/components"
-import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
-import { useSelect } from "@wordpress/data"
-import { store as coreStore } from "@wordpress/core-data"
-import { SelectControl } from "@wordpress/components"
+import { InspectorControls, useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
+import { ToggleControl, PanelBody, PanelRow } from "@wordpress/components"
 
 registerBlockType("blocktheme/casestudies", {
   title: "OS -  Case Studies",
   supports: {
     align: ["full"]
   },
-  attributes: {},
+  attributes: {
+    showFilter: { type: "boolean", default: false }
+  },
   edit: EditComponent,
   save: SaveComponent,
   apiVersion: 2
@@ -27,6 +26,13 @@ function EditComponent(props) {
 
   return (
     <>
+      <InspectorControls>
+        <PanelBody title="Filter" initialOpen={true}>
+          <PanelRow>
+            <ToggleControl label="Show/Hide Filter" help={props.attributes.showFilter ? "Filter showing" : "Filter hidden"} checked={props.attributes.showFilter} onChange={value => props.setAttributes({ showFilter: value })} />
+          </PanelRow>
+        </PanelBody>
+      </InspectorControls>
       <div {...blockProps}>
         <div class="wrapper">
           <div {...innerBlocksProps} />
