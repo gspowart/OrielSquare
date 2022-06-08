@@ -29,6 +29,7 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       grid-auto-rows: min-content;
+      margin-bottom: 100px;
       &-title {
         grid-column: 2/2;
       }
