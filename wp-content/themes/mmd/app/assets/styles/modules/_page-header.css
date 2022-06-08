@@ -17,6 +17,7 @@
     grid-column: 1;
     grid-row: 1;
     padding-top: 40px;
+    max-height: 500px;
     @mixin atMedium {
       padding-top: 65px;
     }
