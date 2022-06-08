@@ -3,12 +3,44 @@
 //Injects CSS & js without affecting admin panel styles
 function scripts()
 {
-  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.5', true);
-  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.5', true);
-  wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.5');
+  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.7', true);
+  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.8', true);
+  wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.7');
   wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 }
 add_action('wp_enqueue_scripts', 'scripts');
+
+/**
+ * Registers an editor stylesheet for the current theme.
+ *
+ * @global WP_Post $post Global post object.
+ */
+function wpdocs_theme_add_editor_styles()
+{
+  global $post;
+
+  $my_post_type = 'post';
+
+  // New post (init hook).
+  if (
+    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php')
+    && (isset($_GET['post_type']) === true && $my_post_type == $_GET['post_type'])
+  ) {
+    add_editor_style(get_stylesheet_directory_uri() . '/dist/editor-style-' . $my_post_type . '.css');
+  }
+
+  // Edit post (pre_get_posts hook).
+  if (
+    stristr($_SERVER['REQUEST_URI'], 'post.php') !== false
+    && is_object($post)
+    && $my_post_type == get_post_type($post->ID)
+  ) {
+    add_editor_style(get_stylesheet_directory_uri() . '/dist/editor-style-' . $my_post_type . '.css');
+  }
+}
+add_action('init',          'wpdocs_theme_add_editor_styles');
+add_action('pre_get_posts', 'wpdocs_theme_add_editor_styles');
+
 
 function features()
 {

@@ -13,6 +13,7 @@ if (currentTask != "start") {
     apply(compiler) {
       compiler.hooks.done.tap("Copy Images", function () {
         fse.copySync("./app/assets/images/", "./dist/assets/images/")
+        fse.copySync("./app/assets/editor-style-post.css", "./dist/editor-style-post.css")
       })
     }
   }
