@@ -131,9 +131,12 @@ function glideHandleHeight(selector) {
 }
 
 // Filter case studies
-document.querySelector("#caseStudyFilter").addEventListener("change", e => {
-  filterCaseStudy(e.target.value)
-})
+var csFilter = document.querySelector("#caseStudyFilter")
+if (csFilter) {
+  csFilter.addEventListener("change", e => {
+    filterCaseStudy(e.target.value)
+  })
+}
 
 // Check for querystring filter of case studies
 const params = new URLSearchParams(window.location.search)
