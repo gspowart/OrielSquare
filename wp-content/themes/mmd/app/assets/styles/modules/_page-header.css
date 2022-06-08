@@ -95,6 +95,7 @@
   &__text {
     grid-column: 1/1;
     grid-row: 2/2;
+    z-index: 3;
     @mixin atMedium {
       grid-row: 1/1;
     }

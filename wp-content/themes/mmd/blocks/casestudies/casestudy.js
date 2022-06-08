@@ -30,7 +30,7 @@ function EditComponent(props) {
     ["blocktheme/button", { text: "Find out more" }]
   ]
 
-  const blockProps = useBlockProps({ className: `row row--gutters` })
+  const blockProps = useBlockProps({})
   const innerBlocksProps = useInnerBlocksProps(blockProps, { template: CASESTUDY_TEMPLATE })
   useEffect(
     function () {
@@ -87,13 +87,15 @@ function EditComponent(props) {
         </PanelBody>
       </InspectorControls>
       <div {...blockProps}>
-        <div class="row__large-6 row--center-content-vertically content-area">
-          <RichText tagName="p" className="headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Category" value={props.attributes.type} onChange={value => props.setAttributes({ type: value })} />
-          <RichText tagName="h3" className="headline headline--h3 headline--underline" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Title" value={props.attributes.title} onChange={value => props.setAttributes({ title: value })} />
-          {innerBlocksProps.children}
-        </div>
-        <div class="row__large-6 row--center-content">
-          <img srcset={`${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`} alt={`${props.attributes.imgAlt}`} />
+        <div className="row row--gutters">
+          <div class="row__large-6 row--center-content-vertically content-area">
+            <RichText tagName="p" className="headline headline--h4 headline--blue headline--uppercase headline--margin-b-mid" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Category" value={props.attributes.type} onChange={value => props.setAttributes({ type: value })} />
+            <RichText tagName="h3" className="headline headline--h3 headline--underline" allowedFormats={["core/bold", "core/italic"]} placeholder="Case Study Title" value={props.attributes.title} onChange={value => props.setAttributes({ title: value })} />
+            <div {...innerBlocksProps} />
+          </div>
+          <div class="row__large-6 row--center-content">
+            <img srcset={`${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`} alt={`${props.attributes.imgAlt}`} />
+          </div>
         </div>
       </div>
       <div class="case-studies__excerpt-editor">
