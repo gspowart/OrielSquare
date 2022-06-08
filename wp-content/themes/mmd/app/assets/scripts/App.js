@@ -7,11 +7,14 @@ import Glide from "@glidejs/glide"
 let mobileMenu = new MobileMenu()
 let modal = new Modal()
 
-document.querySelectorAll(".has-submenu").forEach(el => {
+document.querySelectorAll(".menu-item-has-children").forEach(el => {
   el.addEventListener("click", e => {
-    if (!el.classList.contains("is-showing-submenu")) {
-      e.preventDefault()
-      el.classList.toggle("is-showing-submenu")
+    // Only do this if the mobile menu is displayed
+    if (document.querySelector(".site-header__menu-content--is-visible")) {
+      if (!el.classList.contains("is-showing-submenu")) {
+        e.preventDefault()
+        el.classList.toggle("is-showing-submenu")
+      }
     }
   })
 })
