@@ -85,9 +85,16 @@
       @mixin atLarge {
         text-align: left;
         grid-column: 1/1;
+        width: 30%;
+        text-align: center;
 
         img {
-          max-width: 230px;
+          width: 200px;
+          max-width: 200px;
+          @mixin atFull {
+            width: 250px;
+            max-width: 250px;
+          }
         }
       }
     }

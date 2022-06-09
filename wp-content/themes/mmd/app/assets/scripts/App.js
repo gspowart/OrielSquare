@@ -97,7 +97,12 @@ if (document.querySelector(".glide-logos")) {
     type: "carousel",
     perView: 5,
     autoplay: 2000,
-    animationDuration: 900
+    animationDuration: 900,
+    breakpoints: {
+      800: {
+        perView: 3
+      }
+    }
   })
   glideLogos.mount()
 }
