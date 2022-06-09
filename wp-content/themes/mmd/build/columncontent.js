@@ -216,7 +216,7 @@ function EditComponent(props) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)({
     className: `${props.attributes.className} content-area ${props.attributes.contentColour} ${props.attributes.backgroundColor} ${props.attributes.backgroundImage} ${props.attributes.alignment} ${props.attributes.margin}`
   });
-  const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useInnerBlocksProps)(blockProps, {
+  const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useInnerBlocksProps)({
     template: DEFAULT_TEMPLATE
   });
   const backgroundColors = [{
@@ -407,7 +407,7 @@ function EditComponent(props) {
       label: "Strapline"
     }],
     onChange: handleAlignmentChange
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps, props.attributes.imgID && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("picture", {
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, props.attributes.imgID && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("picture", {
     class: "content-area__background-image"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("source", {
     srcset: `${props.attributes.imgURL}`,
@@ -417,7 +417,7 @@ function EditComponent(props) {
     alt: `${props.attributes.imgAlt}`
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: `${props.attributes.foregroundContent}`
-  }, innerBlocksProps.children)));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps))));
 }
 
 function SaveComponent() {

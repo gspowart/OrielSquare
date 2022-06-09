@@ -32,7 +32,7 @@ registerBlockType("blocktheme/columncontent", {
 function EditComponent(props) {
   const DEFAULT_TEMPLATE = [["core/paragraph"]]
   const blockProps = useBlockProps({ className: `${props.attributes.className} content-area ${props.attributes.contentColour} ${props.attributes.backgroundColor} ${props.attributes.backgroundImage} ${props.attributes.alignment} ${props.attributes.margin}` })
-  const innerBlocksProps = useInnerBlocksProps(blockProps, { template: DEFAULT_TEMPLATE })
+  const innerBlocksProps = useInnerBlocksProps({ template: DEFAULT_TEMPLATE })
 
   const backgroundColors = [
     { name: "none", color: "#ffffff", colorClass: "" },
@@ -174,14 +174,16 @@ function EditComponent(props) {
           </PanelRow>
         </PanelBody>
       </InspectorControls>
-      <div {...innerBlocksProps}>
+      <div {...blockProps}>
         {props.attributes.imgID && (
           <picture class="content-area__background-image">
             <source srcset={`${props.attributes.imgURL}`} media="(min-width: 1380px)" />
             <img srcset={`${props.attributes.imgURL} 1172w, ${props.attributes.imgURLx2} 2344w`} alt={`${props.attributes.imgAlt}`} />
           </picture>
         )}
-        <div class={`${props.attributes.foregroundContent}`}>{innerBlocksProps.children}</div>
+        <div class={`${props.attributes.foregroundContent}`}>
+          <div {...innerBlocksProps} />
+        </div>
       </div>
     </>
   )
