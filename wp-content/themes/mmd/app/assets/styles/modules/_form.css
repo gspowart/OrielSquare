@@ -3,6 +3,7 @@
   gap: 20px;
   grid-template-rows: auto;
   grid-template-columns: auto;
+  margin-bottom: 20px;
   @mixin atMedium {
     grid-template-columns: auto auto;
   }
@@ -75,7 +76,7 @@
   margin-bottom: 1rem;
   padding: 0.9rem 1.9rem;
   cursor: pointer;
-  background: linear-gradient(90deg, #0ed3b1 0%, #0092b6 93.58%, #0092b6 100%);
+  background-color: $orange;
   color: $white;
   @mixin atSmall {
     font-size: 1rem;
