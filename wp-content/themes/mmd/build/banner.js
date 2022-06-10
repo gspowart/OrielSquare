@@ -155,6 +155,7 @@ function EditComponent(props) {
     allowedFormats: ["core/bold", "core/italic"],
     tagName: "h1",
     className: `headline headline--h1`,
+    placeholder: "Page title",
     value: props.attributes.text,
     onChange: handleTextChange
   }))))));

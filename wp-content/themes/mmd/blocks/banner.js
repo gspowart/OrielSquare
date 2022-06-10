@@ -25,7 +25,7 @@ function EditComponent(props) {
               <img src={props.attributes.logoURL} alt="Oriel Square Logo" />
             </div>
             <div class="page-header__text">
-              <RichText allowedFormats={["core/bold", "core/italic"]} tagName="h1" className={`headline headline--h1`} value={props.attributes.text} onChange={handleTextChange} />
+              <RichText allowedFormats={["core/bold", "core/italic"]} tagName="h1" className={`headline headline--h1`} placeholder="Page title" value={props.attributes.text} onChange={handleTextChange} />
             </div>
           </div>
         </div>
