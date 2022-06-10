@@ -39,3 +39,10 @@ ol {
     line-height: 1.6;
   }
 }
+
+.page blockquote {
+  overflow-wrap: break-word;
+  background: #fff;
+  margin: 0px 0px;
+  padding: 10px 40px 30px;
+}

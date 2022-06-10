@@ -289,7 +289,7 @@ function EditComponent(props) {
       block.attributes.size = "h2"
       block.attributes.text = "Hello"
       dispatch("core/block-editor").insertBlock(block, 0, props.clientId)
-        console.log(block)
+       console.log(block)
       console.log(props)*/
     }
 
