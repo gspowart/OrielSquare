@@ -43,6 +43,11 @@ ol {
 .page blockquote {
   overflow-wrap: break-word;
   background: #fff;
-  margin: 0px 0px;
+  margin: 20px 0px;
   padding: 10px 40px 30px;
+
+  &.is-style-default {
+    color: $underline;
+    font-size: 1.2rem;
+  }
 }
