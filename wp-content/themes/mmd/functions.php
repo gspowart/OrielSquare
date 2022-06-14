@@ -50,8 +50,8 @@ function features()
   add_editor_style(array('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i', 'dist/style.css', 'dist/editor-style.css'));
 
   // Image resizing
-  add_image_size('homepage_banner_1x', 2000, 500, true);
-  add_image_size('homepage_banner_2x', 4000, 1000, true);
+  add_image_size('homepage_banner_1x', 1200, 650, true);
+  add_image_size('homepage_banner_2x', 2400, 1300, true);
   add_image_size('team_director_1x', 220, 220, true);
   add_image_size('team_director_2x', 440, 440, true);
   add_image_size('team_member_1x', 190, 190, true);

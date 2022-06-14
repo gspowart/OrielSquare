@@ -16,7 +16,4 @@ if (isset($attributes['class'])) {
   $class = $attributes['class'];
 }
 ?>
-<picture class="<?php echo $class; ?>">
-  <source srcset="<?php echo $imgURL ?>" media="(min-width: 1380px)">
-  <img srcset="<?php echo $imgURL ?> 640w, <?php echo $imgURLx2 ?> 1280w" alt="<?php echo $imgAlt ?>">
-</picture>
+<input type="hidden" class="hdn-header-image" data-url="<?php echo $imgURL ?>" data-urlx2="<?php echo $imgURLx2 ?>" data-alt="<?php echo $imgAlt ?>" data-class="<?php echo $class; ?>" />

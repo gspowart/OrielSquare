@@ -19,7 +19,8 @@ echo $dom->saveHtml($pictures[$id]);
 */
 ?>
 <div class="page-header page-header--homepage page-header--no-padding page-header--white">
-  <?php echo $content; ?>
+  <?php echo $content ?>
+  <picture id="homepageHeaderImage"></picture>
   <div class="page-header__content page-header__content--home">
     <div class="wrapper">
       <div class="page-header__logo page-header__logo--home"><img src="<?php echo $logoURL ?>" alt="Oriel Square Logo"></div>

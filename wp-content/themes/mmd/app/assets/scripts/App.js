@@ -113,15 +113,6 @@ function setModalItem(carousel, id) {
   carousel.update({ startAt: id })
 }
 
-if (document.querySelector(".page-header__image")) {
-  var index = Math.floor(Math.random() * document.querySelectorAll(".page-header__image").length)
-  document
-    .querySelectorAll(".page-header__image")
-    [index].querySelectorAll("source, img")
-    .forEach(el => {
-      el.setAttribute("srcset", el.getAttribute("data-srcset"))
-    })
-}
 // Resize height
 function glideHandleHeight(selector) {
   const activeSlide = document.querySelector(selector + " .glide__slide--active")
@@ -172,4 +163,26 @@ function filterCaseStudy(selectedCategory) {
     }
     el.style.display = display
   })
+}
+
+var homepageHeaderImage = document.querySelector("#homepageHeaderImage")
+if (homepageHeaderImage) {
+  var hiddenImages = document.querySelectorAll(".hdn-header-image")
+  if (hiddenImages) {
+    var index = Math.floor(Math.random() * hiddenImages.length)
+    var image = hiddenImages[index]
+
+    var source = document.createElement("source")
+    var sourceSrc = image.getAttribute("data-url") + " 1200w, " + image.getAttribute("data-urlx2") + " 2400w"
+    source.setAttribute("srcset", sourceSrc)
+    source.setAttribute("media", "(min-width: 1380px)")
+    homepageHeaderImage.appendChild(source)
+
+    var img = document.createElement("img")
+    img.setAttribute("srcset", sourceSrc)
+    img.setAttribute("alt", image.getAttribute("data-alt"))
+    homepageHeaderImage.appendChild(img)
+
+    homepageHeaderImage.setAttribute("class", image.getAttribute("data-class"))
+  }
 }
