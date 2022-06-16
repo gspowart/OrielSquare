@@ -27,7 +27,7 @@
   }
   &-team .glide__slide {
     @mixin atFull {
-      height: 300vh;
+      height: 30vh;
       overflow-x: hidden;
       overflow-y: auto;
     }
