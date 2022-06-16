@@ -37,6 +37,9 @@ ol {
   li {
     margin-bottom: 0.6rem;
     line-height: 1.6;
+    ul {
+      margin-top: 0.6rem;
+    }
   }
 }
 

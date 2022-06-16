@@ -5,6 +5,17 @@
     padding: 0rem 1rem;
   }
 
+  &-case-studies .glide__slide {
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  &-team .glide__slide {
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   &__track {
     transition: height 250ms ease-in-out;
   }
