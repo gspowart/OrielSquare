@@ -4,16 +4,33 @@
   @mixin atMedium {
     padding: 0rem 1rem;
   }
+  &-testimonial {
+    padding: 0rem 3rem;
+    @mixin atFull {
+      padding: 0rem 1rem;
+    }
+  }
 
   &-case-studies .glide__slide {
-    height: 500px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    @mixin atFull {
+      height: 375px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+  &-case-studies.glide__modal .glide__slide {
+    @mixin atFull {
+      height: 60vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
   }
   &-team .glide__slide {
-    height: 250px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    @mixin atFull {
+      height: 60vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
   }
 
   &__track {
@@ -21,10 +38,7 @@
   }
 
   &__arrows {
-    display: none;
-    @mixin atMedium {
-      display: block;
-    }
+    display: block;
   }
 
   &__slides {
@@ -49,12 +63,18 @@
     height: 80px;
     cursor: pointer;
     &--left {
-      left: -40px;
+      left: 0px;
       background-image: url("../../assets/images/icons/arrow-left.svg");
+      @mixin atFull {
+        left: -40px;
+      }
     }
     &--right {
-      right: -40px;
+      right: 0px;
       background-image: url("../../assets/images/icons/arrow-right.svg");
+      @mixin atFull {
+        right: -40px;
+      }
     }
   }
 
@@ -88,6 +108,13 @@
       border: 1.6rem solid rgba(112, 112, 112, 0.4);
       padding: 2rem 1rem;
       margin: 15px;
+    }
+
+    .glide__arrows {
+      display: none;
+      @mixin atMedium {
+        display: block;
+      }
     }
 
     .glide__arrow {
