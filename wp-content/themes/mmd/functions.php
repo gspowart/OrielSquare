@@ -3,8 +3,8 @@
 //Injects CSS & js without affecting admin panel styles
 function scripts()
 {
-  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.21', true);
-  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.21', true);
+  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.22', true);
+  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.22', true);
   wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.21');
   wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 }
@@ -58,8 +58,8 @@ function features()
   add_image_size('team_member_2x', 380, 380, true);
   add_image_size('card_image_1x', 140, 140, true);
   add_image_size('card_image_2x', 280, 280, true);
-  add_image_size('logo_1x', 210, 70, false);
-  add_image_size('logo_2x', 420, 140, false);
+  add_image_size('logo_1x', 210, 80, false);
+  add_image_size('logo_2x', 420, 160, false);
   add_image_size('large_logo_1x', 250, 90, false);
   add_image_size('large_logo_2x', 500, 180, false);
   add_image_size('backgroundImage', 1172, 640, false);

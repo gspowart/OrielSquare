@@ -75,10 +75,13 @@ document.querySelectorAll(".showTeamBio").forEach(el => {
 
 var popupContentCS = document.querySelector("#popupcontentCS")
 var caseStudiesPopupCount = 0
-document.querySelectorAll(".showCaseStudy").forEach(el => {
-  el.dataset.caseStudyId = caseStudiesPopupCount
+document.querySelectorAll(".case-studies__study").forEach(el => {
+  el.querySelectorAll(".showCaseStudy").forEach(elLink => {
+    elLink.dataset.caseStudyId = caseStudiesPopupCount
+  })
   caseStudiesPopupCount++
-  var popupContent = el.parentElement.querySelector(".case-studies__details--popup-content")
+
+  var popupContent = el.querySelector(".case-studies__details--popup-content")
   if (popupContent) {
     popupContentCS.append(popupContent)
   }

@@ -173,6 +173,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     bio: {
       type: "string"
+    },
+    linkedin: {
+      type: "string",
+      default: "<a href='https://www.linkedin.com/'>#linkedin</a>"
     }
   },
   edit: EditComponent,
@@ -256,7 +260,19 @@ function EditComponent(props) {
     onChange: value => props.setAttributes({
       position: value
     })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "team__contact"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "linkedin"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+    allowedFormats: ["core/bold", "core/italic", "core/link"],
+    tagName: "span",
+    className: "linkedin-url",
+    value: props.attributes.linkedin,
+    onChange: value => props.setAttributes({
+      linkedin: value
+    })
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     class: "btn btn--default"
   }, "Read more")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "team__details--editor content-area"

@@ -19,6 +19,11 @@ $bio = 'Biography';
 if (isset($attributes['bio'])) {
   $bio = $attributes['bio'];
 }
+$linkedin = '<a href="https://www.linkedin.com">#LinkedIn</a>';
+if (isset($attributes['linkedin'])) {
+  $linkedin = $attributes['linkedin'];
+}
+
 
 ?>
 
@@ -27,6 +32,12 @@ if (isset($attributes['bio'])) {
   <div class="team__details content-area">
     <div class="team__name"><?php echo $name; ?></div>
     <div class="team__position"><?php echo $position; ?></div>
+    <?php if ($linkedin) { ?>
+      <div class="team__contact">
+        <span class="linkedin"><?php echo $linkedin; ?></span>
+      </div>
+    <?php } ?>
+
     <a class="btn btn--default open-modal showTeamBio" data-team-id="1">
       Read more
     </a>

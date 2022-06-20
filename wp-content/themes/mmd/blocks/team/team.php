@@ -8,7 +8,9 @@ if (isset($attributes['text'])) {
 <div class="page-section page-section--aqua page-section--padding-medium">
   <div class="wrapper">
     <div class="team">
-      <h2 class="headline--white headline--centre headline--h2 headline--uppercase headline--margin-b"><?php echo $text; ?></h2>
+      <?php if ($text) { ?>
+        <h2 class="headline--white headline--centre headline--h2 headline--uppercase headline--margin-b"><?php echo $text; ?></h2>
+      <?php } ?>
       <?php echo $content; ?>
     </div>
   </div>

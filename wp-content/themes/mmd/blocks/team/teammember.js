@@ -18,7 +18,8 @@ registerBlockType("blocktheme/teammember", {
     imgURLx2: { type: "string", default: teammember.fallbackImage },
     name: { type: "string", default: "Name" },
     position: { type: "string", default: "Position" },
-    bio: { type: "string" }
+    bio: { type: "string" },
+    linkedin: { type: "string", default: "<a href='https://www.linkedin.com/'>#linkedin</a>" }
   },
   edit: EditComponent,
   save: SaveComponent,
@@ -78,6 +79,11 @@ function EditComponent(props) {
         <div class="team__details content-area">
           <RichText allowedFormats={[]} tagName="div" className="team__name" value={props.attributes.name} onChange={value => props.setAttributes({ name: value })} />
           <RichText allowedFormats={[]} tagName="div" className="team__position" value={props.attributes.position} onChange={value => props.setAttributes({ position: value })} />
+          <div class="team__contact">
+            <span class="linkedin">
+              <RichText allowedFormats={["core/bold", "core/italic", "core/link"]} tagName="span" className="linkedin-url" value={props.attributes.linkedin} onChange={value => props.setAttributes({ linkedin: value })} />
+            </span>
+          </div>
           <a class="btn btn--default">Read more</a>
         </div>
         <div class="team__details--editor content-area">
