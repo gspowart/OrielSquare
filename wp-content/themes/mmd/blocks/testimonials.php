@@ -21,6 +21,6 @@ if (isset($attributes['title'])) {
         </div>
       </div>
     </div>
-    <p class="t-centre"><a class="btn btn--default">View all case studies</a></p>
+    <p class="t-centre"><a class="btn btn--default" href="<?php the_permalink(697); ?>">View all case studies</a></p>
   </div>
 </div>

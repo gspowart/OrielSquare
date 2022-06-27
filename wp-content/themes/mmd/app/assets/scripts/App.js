@@ -75,7 +75,7 @@ document.querySelectorAll(".showTeamBio").forEach(el => {
 
 var popupContentCS = document.querySelector("#popupcontentCS")
 var caseStudiesPopupCount = 0
-document.querySelectorAll(".case-studies__study").forEach(el => {
+document.querySelectorAll(".case-study-item").forEach(el => {
   el.querySelectorAll(".showCaseStudy").forEach(elLink => {
     elLink.dataset.caseStudyId = caseStudiesPopupCount
   })
@@ -87,11 +87,13 @@ document.querySelectorAll(".case-studies__study").forEach(el => {
   }
 })
 
-var carouselCS = makeCarousel(".glide-case-studies")
+var carouselCS = makeCarousel(".glide-case-studies-inline")
+var carouselCSPopup = makeCarousel(".glide-case-studies")
+
 document.querySelectorAll(".showCaseStudy").forEach(el => {
   el.addEventListener("click", e => {
     e.preventDefault()
-    setModalItem(carouselCS, el.dataset.caseStudyId)
+    setModalItem(carouselCSPopup, el.dataset.caseStudyId)
   })
 })
 
