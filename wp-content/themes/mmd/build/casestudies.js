@@ -147,11 +147,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function EditComponent(props) {
   const CS_TEMPLATE = [["blocktheme/casestudygroup", {
-    className: "case-studies__featured-area",
-    title: "Featured Case Studies"
-  }], ["blocktheme/casestudygroup", {
     className: "case-studies__standard-area",
-    title: "Standard Case Studies"
+    title: "Case Studies"
   }]];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: "page-section page-section--aqua--large page-section--padding-medium"

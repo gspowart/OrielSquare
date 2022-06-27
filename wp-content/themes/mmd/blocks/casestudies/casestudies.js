@@ -16,10 +16,7 @@ registerBlockType("blocktheme/casestudies", {
 })
 
 function EditComponent(props) {
-  const CS_TEMPLATE = [
-    ["blocktheme/casestudygroup", { className: "case-studies__featured-area", title: "Featured Case Studies" }],
-    ["blocktheme/casestudygroup", { className: "case-studies__standard-area", title: "Standard Case Studies" }]
-  ]
+  const CS_TEMPLATE = [["blocktheme/casestudygroup", { className: "case-studies__standard-area", title: "Case Studies" }]]
 
   const blockProps = useBlockProps({ className: "page-section page-section--aqua--large page-section--padding-medium" })
   const innerBlocksProps = useInnerBlocksProps({ className: "case-studies" }, { template: CS_TEMPLATE, allowedBlocks: ["blocktheme/casestudychooser"], templateLock: "all" })
