@@ -18,12 +18,21 @@ if (isset($attributes['layout'])) {
 if ($layout == "carousel") {
   echo '<div class="glide__slide">';
 }
-if (str_ends_with($imgURL, '.svg')) { ?>
-  <img class="image-flexbox__image image-flexbox__image--grey" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
-<?php } else { ?>
-  <img class="image-flexbox__image image-flexbox__image--grey" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
-<?php
+$url = null;
+if (isset($attributes['linkObject']) && isset($attributes['linkObject']['url'])) {
+  $url = $attributes['linkObject']['url'];
 }
+if (isset($url)) { ?><a href="<?php echo $url; ?>" target="_blank">
+  <?php
+}
+if (str_ends_with($imgURL, '.svg')) { ?>
+    <img class="image-flexbox__image image-flexbox__image--grey" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
+  <?php } else { ?>
+    <img class="image-flexbox__image image-flexbox__image--grey" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+  <?php
+}
+if (isset($url)) { ?></a>
+<?php }
 if ($layout == "carousel") {
   echo '</div>';
 }
