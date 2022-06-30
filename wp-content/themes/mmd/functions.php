@@ -3,9 +3,9 @@
 //Injects CSS & js without affecting admin panel styles
 function scripts()
 {
-  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.26', true);
-  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.26', true);
-  wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.24');
+  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.27', true);
+  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.27', true);
+  wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.25');
   wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 }
 add_action('wp_enqueue_scripts', 'scripts');

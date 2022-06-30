@@ -20,9 +20,11 @@
       @mixin atMedium {
         &:nth-child(5n + 1) {
           grid-column: 1 / 4;
+          text-align: center;
         }
         &:nth-child(5n + 2) {
           grid-column: 4 / 7;
+          text-align: center;
         }
         &:nth-child(5n + 3) {
           grid-column: 1 / 3;

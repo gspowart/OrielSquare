@@ -3,13 +3,23 @@
 
   &--aqua {
     background: linear-gradient(45deg, #0ed3b1 0%, #0092b6 75%, #0092b6 100%);
+
+    a {
+      color: $white;
+    }
   }
   &--aqua--large {
     background: linear-gradient(45deg, #0ed3b1 0%, #0092b6 97%, #0092b6 100%);
+    a {
+      color: $white;
+    }
   }
 
   &--dark-grey {
     background-color: $darkGrey;
+    a {
+      color: $white;
+    }
   }
   &--mid-grey {
     background-color: $midGrey;
