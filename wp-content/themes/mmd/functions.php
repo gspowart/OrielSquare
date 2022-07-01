@@ -103,6 +103,28 @@ function add_input_type_gravity_forms($form)
   return $form;
 }
 
+function add_analytics()
+{
+  $font_script = <<<'EOD'
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101605647-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-101605647-1');
+  </script>
+EOD;
+  echo $font_script;
+}
+add_action('wp_head', 'add_analytics');
+
+
+
+
+
+
 /* ******************************************************************************************** 
 Block Theme Functions
 ******************************************************************************************** */
