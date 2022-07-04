@@ -49,9 +49,9 @@
     }
   }
 
-  &__slide {
+  /*&__slide {
     margin: auto;
-  }
+  }*/
 
   &__arrow {
     position: absolute;
