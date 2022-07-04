@@ -40,7 +40,7 @@
     padding: 2rem 2rem;
     margin-bottom: 25px;
     @mixin atLarge {
-      padding: 2rem 4rem;
+      padding: 2rem 3rem;
       display: grid;
       row-gap: 1rem;
       column-gap: 2rem;

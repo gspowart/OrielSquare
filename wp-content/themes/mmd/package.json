@@ -1,10 +1,11 @@
 {
   "name": "oriel-square",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "wp-scripts start src/index.js blocks/sitefooter.js blocks/sitefootercontent.js blocks/homepagebanner.js blocks/genericpicture.js blocks/genericimage.js blocks/generictext.js blocks/testimonials.js blocks/testimonial.js blocks/job.js blocks/casestudies/casestudies.js blocks/casestudies/casestudygroup.js blocks/casestudies/casestudycarousel.js blocks/casestudies/casestudychooser.js blocks/casestudies/casestudy.js blocks/image.js blocks/imagerow.js blocks/cards/card.js blocks/cards/cards.js blocks/cards/cardimage.js blocks/cards/cardcontent.js blocks/cta.js blocks/team/team.js blocks/team/teammembers.js blocks/team/teammember.js blocks/team/teamdirectors.js blocks/team/teamdirector.js blocks/banner.js blocks/strapline.js blocks/columns/columns.js blocks/submenu.js blocks/columns/columns3.js blocks/columns/columns5050.js blocks/columns/columns4060.js blocks/columns/columns6040.js blocks/columns/columnsfull.js blocks/columns/columncontent.js blocks/header.js blocks/heading.js blocks/button.js ",
+    "buildwp": "wp-scripts build src/index.js blocks/sitefooter.js blocks/sitefootercontent.js blocks/homepagebanner.js blocks/genericpicture.js blocks/genericimage.js blocks/generictext.js blocks/testimonials.js blocks/testimonial.js blocks/job.js blocks/casestudies/casestudies.js blocks/casestudies/casestudygroup.js blocks/casestudies/casestudycarousel.js blocks/casestudies/casestudychooser.js blocks/casestudies/casestudy.js blocks/image.js blocks/imagerow.js blocks/cards/card.js blocks/cards/cards.js blocks/cards/cardimage.js blocks/cards/cardcontent.js blocks/cta.js blocks/team/team.js blocks/team/teammembers.js blocks/team/teammember.js blocks/team/teamdirectors.js blocks/team/teamdirector.js blocks/banner.js blocks/strapline.js blocks/columns/columns.js blocks/submenu.js blocks/columns/columns3.js blocks/columns/columns5050.js blocks/columns/columns4060.js blocks/columns/columns6040.js blocks/columns/columnsfull.js blocks/columns/columncontent.js blocks/header.js blocks/heading.js blocks/button.js ",
     "devwp": "wp-scripts start",
     "dev": "webpack serve --config dev-webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",

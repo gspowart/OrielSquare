@@ -16,7 +16,10 @@
 
   &__image {
     margin-bottom: 1rem;
-    padding: 0 2rem;
+    padding: 0 0.6rem;
+    @mixin atMedium {
+      padding: 0 2rem;
+    }
     &--grey {
       filter: grayscale(1);
       transition: filter 0.5s ease;

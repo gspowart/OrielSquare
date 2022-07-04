@@ -318,14 +318,14 @@ function EditComponent(props) {
     settings: [],
     value: props.attributes.linkObject,
     onChange: handleLinkChange
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     variant: "primary",
     onClick: () => setIsLinkPickerVisible(false),
     style: {
       display: "block",
       width: "100%"
     }
-  }), "Confirm Link")));
+  }, "Confirm Link")));
 }
 
 function SaveComponent(props) {

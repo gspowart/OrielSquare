@@ -66,6 +66,14 @@
     color: $error;
   }
 }
+
+.gform_confirmation_wrapper {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+}
+.gform_submission_error {
+  color: red;
+}
 .gform_button {
   text-decoration: none;
   text-transform: uppercase;

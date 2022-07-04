@@ -105,7 +105,7 @@ if (document.querySelector(".glide-logos")) {
     animationDuration: 900,
     breakpoints: {
       800: {
-        perView: 3
+        perView: 2
       }
     }
   })

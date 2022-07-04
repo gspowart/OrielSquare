@@ -92,6 +92,7 @@ function wpdocs_allowed_post_type_blocks($allowed_block_types, $editor_context)
 add_filter('allowed_block_types_all', 'wpdocs_allowed_post_type_blocks', 10, 2);
 
 
+add_filter('gform_confirmation_anchor', '__return_true');
 
 add_filter('gform_pre_render', 'add_input_type_gravity_forms');
 

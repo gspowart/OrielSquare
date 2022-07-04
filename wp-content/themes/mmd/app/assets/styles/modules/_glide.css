@@ -49,6 +49,10 @@
     }
   }
 
+  &__slide {
+    margin: auto;
+  }
+
   &__arrow {
     position: absolute;
     top: 50%;
@@ -111,7 +115,7 @@
     }
 
     .glide__arrows {
-      display: none;
+      display: block;
       @mixin atMedium {
         display: block;
       }
