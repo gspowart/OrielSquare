@@ -14,8 +14,14 @@ if (isset($attributes["imgURLx2"])) {
 if (isset($attributes["imgAlt"])) {
   $imgAlt = $attributes["imgAlt"];
 }
+$url = null;
+if (isset($attributes['linkObject']) && isset($attributes['linkObject']['url'])) {
+  $url = $attributes['linkObject']['url'];
+}
 ?>
 
 <div class="os-card__image">
-  <img srcset="<?php echo $imageURL; ?> 1x, <?php echo $imageURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+  <?php if (isset($url)) { ?><a href="<?php echo $url; ?>" target="_blank"> <?php } ?>
+    <img srcset="<?php echo $imageURL; ?> 1x, <?php echo $imageURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+    <?php if (isset($url)) { ?></a> <?php } ?>
 </div>

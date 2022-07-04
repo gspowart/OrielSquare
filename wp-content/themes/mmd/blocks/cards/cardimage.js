@@ -1,9 +1,10 @@
 import apiFetch from "@wordpress/api-fetch"
-import { Button, PanelBody } from "@wordpress/components"
-import { InspectorControls, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor"
+import { ToolbarGroup, ToolbarButton, Popover, Button, PanelBody } from "@wordpress/components"
+import { InspectorControls, BlockControls, MediaUpload, MediaUploadCheck, __experimentalLinkControl as LinkControl } from "@wordpress/block-editor"
 import { registerBlockType } from "@wordpress/blocks"
-import { useEffect } from "@wordpress/element"
+import { useState, useEffect } from "@wordpress/element"
 import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor"
+import { link } from "@wordpress/icons"
 
 registerBlockType("blocktheme/cardimage", {
   title: "OS -  Card Image",
@@ -15,7 +16,8 @@ registerBlockType("blocktheme/cardimage", {
     imgID: { type: "number" },
     imgURL: { type: "string", default: cardimage.fallbackImage },
     imgURLx2: { type: "string", default: cardimage.fallbackImage },
-    imgAlt: { type: "string", default: "#" }
+    imgAlt: { type: "string", default: "#" },
+    linkObject: { type: "object", default: { url: "" } }
   },
   edit: EditComponent,
   save: SaveComponent,
@@ -23,6 +25,11 @@ registerBlockType("blocktheme/cardimage", {
 })
 
 function EditComponent(props) {
+  const [isLinkPickerVisible, setIsLinkPickerVisible] = useState(false)
+  const toggleVisible = () => {
+    setIsLinkPickerVisible(state => !state)
+  }
+
   useEffect(
     function () {
       if (props.attributes.imgID) {
@@ -51,6 +58,10 @@ function EditComponent(props) {
     props.setAttributes({ imgID: x.id })
   }
 
+  function handleLinkChange(newLink) {
+    props.setAttributes({ linkObject: newLink })
+  }
+
   const MY_TEMPLATE = [
     ["blocktheme/cardimage", { placeholder: "Image" }],
     ["blocktheme/cardcontent", {}]
@@ -60,6 +71,11 @@ function EditComponent(props) {
 
   return (
     <>
+      <BlockControls>
+        <ToolbarGroup>
+          <ToolbarButton onClick={toggleVisible} icon={link} />
+        </ToolbarGroup>
+      </BlockControls>
       <InspectorControls>
         <PanelBody title="Card Image" initialOpen={true}>
           <MediaUploadCheck>
@@ -75,6 +91,14 @@ function EditComponent(props) {
       </InspectorControls>
       <div {...innerBlocksProps}>
         <img srcset={`${props.attributes.imgURL} 1x, ${props.attributes.imgURLx2} 2x`} alt={`${props.attributes.imgAlt}`} />
+        {isLinkPickerVisible && (
+          <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
+            <LinkControl settings={[]} value={props.attributes.linkObject} onChange={handleLinkChange} />
+            <Button variant="primary" onClick={() => setIsLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>
+              Confirm Link
+            </Button>
+          </Popover>
+        )}
       </div>
     </>
   )
