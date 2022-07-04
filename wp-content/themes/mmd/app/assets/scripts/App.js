@@ -194,3 +194,12 @@ if (homepageHeaderImage) {
     homepageHeaderImage.setAttribute("class", image.getAttribute("data-class"))
   }
 }
+
+var caseStudiesDisplayed = document.querySelectorAll(".case-studies__study")
+if (caseStudiesDisplayed) {
+  if (caseStudiesDisplayed.length == 3) {
+    caseStudiesDisplayed.forEach(el => {
+      el.classList.add("case-studies__study--slim")
+    })
+  }
+}
