@@ -3,9 +3,9 @@
 //Injects CSS & js without affecting admin panel styles
 function scripts()
 {
-  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.30', true);
-  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.31', true);
-  wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.29');
+  wp_enqueue_script('main', get_theme_file_uri('/dist/main.js'), '', '1.32', true);
+  wp_enqueue_script('main', get_theme_file_uri('/build/index.js'), array('jquery'), '1.32', true);
+  wp_enqueue_style('main_css', get_theme_file_uri('/dist/style.css'), '', '0.30');
   wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 }
 add_action('wp_enqueue_scripts', 'scripts');
@@ -90,9 +90,6 @@ function wpdocs_allowed_post_type_blocks($allowed_block_types, $editor_context)
 }
 
 add_filter('allowed_block_types_all', 'wpdocs_allowed_post_type_blocks', 10, 2);
-
-
-add_filter('gform_confirmation_anchor', '__return_true');
 
 add_filter('gform_pre_render', 'add_input_type_gravity_forms');
 
