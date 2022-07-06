@@ -23,7 +23,7 @@ echo $dom->saveHtml($pictures[$id]);
   <picture id="homepageHeaderImage"></picture>
   <div class="page-header__content page-header__content--home">
     <div class="wrapper">
-      <div class="page-header__logo page-header__logo--home"><img src="<?php echo $logoURL ?>" alt="Oriel Square Logo"></div>
+      <div class="page-header__logo page-header__logo--home"><img width="200" height="239" src="<?php echo $logoURL ?>" alt="Oriel Square Logo"></div>
       <div class="page-header__strapline"><?php echo $strapline; ?></div>
     </div>
   </div>

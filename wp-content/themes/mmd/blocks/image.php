@@ -15,6 +15,12 @@ $layout = '#';
 if (isset($attributes['layout'])) {
   $layout = $attributes['layout'];
 }
+$imgID = 0;
+if (isset($attributes['imgID'])) {
+  $imgID = $attributes['imgID'];
+}
+$image = wp_get_attachment_image_src($imgID, 'logo_1x');
+
 if ($layout == "carousel") {
   echo '<div class="glide__slide">';
 }
@@ -26,9 +32,9 @@ if (isset($url)) { ?><a href="<?php echo $url; ?>" target="_blank">
   <?php
 }
 if (str_ends_with($imgURL, '.svg')) { ?>
-    <img class="image-flexbox__image image-flexbox__image--grey" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
+    <img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" class="image-flexbox__image image-flexbox__image--grey" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
   <?php } else { ?>
-    <img class="image-flexbox__image image-flexbox__image--grey" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+    <img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" class="image-flexbox__image image-flexbox__image--grey" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
   <?php
 }
 if (isset($url)) { ?></a>
