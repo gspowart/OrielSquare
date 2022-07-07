@@ -32,9 +32,9 @@ $image = wp_get_attachment_image_src($imgID, 'logo_1x');
 
 echo '<' . $wrapperTag . ' class="' . $wrapperClassName . '">';
 if (str_ends_with($imgURL, '.svg')) { ?>
-  <img width="140" height="168" class="<?php echo $class; ?>" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
+  <img loading="lazy" width="140" height="168" class="<?php echo $class; ?>" src="<?php echo $imgURL; ?>" alt="<?php echo $imgAlt; ?>" />
 <?php } else { ?>
-  <img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" class="<?php echo $class; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+  <img loading="lazy" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" class="<?php echo $class; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
 <?php
 }
 echo '</' . $wrapperTag . '>';

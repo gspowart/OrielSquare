@@ -51,11 +51,11 @@ if ($layoutType == "carousel") {
               <h3 class="headline headline--h3 headline--underline"><?php echo $title; ?></h3>
               <?php echo $content; ?>
             </div>
-            <div class="row__large-6 row--center-content"><img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></div>
+            <div class="row__large-6 row--center-content"><img loading="lazy" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></div>
           </div>
         </div>
       </div>
-      <div class="row__large-6 row--center-content"><a href="#" class="open-modal showCaseStudy"><img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></a></div>
+      <div class="row__large-6 row--center-content"><a href="#" class="open-modal showCaseStudy"><img loading="lazy" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></a></div>
     </div>
   </div>
 <?php
@@ -63,7 +63,7 @@ if ($layoutType == "carousel") {
 ?>
   <div class="case-studies__study case-study-item content-area" data-case-study-categories="<?php echo $categories; ?>">
     <div class="case-studies__image">
-      <a href="#" class="open-modal showCaseStudy"><img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></a>
+      <a href="#" class="open-modal showCaseStudy"><img loading="lazy" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></a>
     </div>
     <div class="case-studies__details">
       <h3 class="case-studies__title"><?php echo $title; ?></h3>
@@ -76,7 +76,7 @@ if ($layoutType == "carousel") {
             <h3 class="headline headline--h3 headline--underline"><?php echo $title; ?></h3>
             <?php echo $content; ?>
           </div>
-          <div class="row__large-6 row--center-content"><img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></div>
+          <div class="row__large-6 row--center-content"><img loading="lazy" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imgURL; ?> 1x, <?php echo $imgURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" /></div>
         </div>
       </div>
 

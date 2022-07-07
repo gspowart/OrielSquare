@@ -28,6 +28,6 @@ $image = wp_get_attachment_image_src($imgID, 'card_image_1x');
 
 <div class="os-card__image">
   <?php if (isset($url)) { ?><a href="<?php echo $url; ?>" target="_blank"> <?php } ?>
-    <img width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imageURL; ?> 1x, <?php echo $imageURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
+    <img loading="lazy" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" srcset="<?php echo $imageURL; ?> 1x, <?php echo $imageURLx2; ?> 2x" alt="<?php echo $imgAlt; ?>" />
     <?php if (isset($url)) { ?></a> <?php } ?>
 </div>

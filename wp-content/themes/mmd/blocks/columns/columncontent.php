@@ -50,7 +50,7 @@ if (isset($attributes['imgAlt'])) {
   <?php if (!is_null($imgID)) { ?>
     <picture class="content-area__background-image">
       <source srcset="<?php echo $imgURL; ?>" media="(min-width: 1380px)" />
-      <img srcset="<?php echo $imgURL; ?> 1172w, <?php echo $imgURLx2; ?> 2344w" alt="<?php echo $imgAlt; ?>" />
+      <img loading="lazy" srcset="<?php echo $imgURL; ?> 1172w, <?php echo $imgURLx2; ?> 2344w" alt="<?php echo $imgAlt; ?>" />
     </picture>
   <?php } ?>
   <div class="<?php echo $foregroundContent; ?>"><?php echo $content; ?></div>
