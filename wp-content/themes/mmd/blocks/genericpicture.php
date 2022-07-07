@@ -15,5 +15,6 @@ $class = '';
 if (isset($attributes['class'])) {
   $class = $attributes['class'];
 }
+
 ?>
 <input type="hidden" class="hdn-header-image" data-url="<?php echo $imgURL ?>" data-urlx2="<?php echo $imgURLx2 ?>" data-alt="<?php echo $imgAlt ?>" data-class="<?php echo $class; ?>" />
