@@ -118,9 +118,12 @@ EOD;
 }
 add_action('wp_head', 'add_analytics');
 
-
-
-
+function add_favIcon()
+{
+  echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/dist/assets/images/logos/favicon.ico" sizes="any">
+  <link rel="icon" href="' . get_stylesheet_directory_uri() . '/dist/assets/images/logos/oriel-square-logo.svg" type="image/svg+xml">';
+}
+add_action('wp_head', 'add_favIcon');
 
 
 /* ******************************************************************************************** 
